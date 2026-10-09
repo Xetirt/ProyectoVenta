@@ -1,0 +1,20 @@
+<!DOCTYPE html><html lang="es"><head>
+  <script src="js/theme-bootstrap.js"></script><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title data-i18n-title="settings.title"></title><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/app.css"></head>
+<body><div class="app-layout"><aside id="app-sidebar" class="sidebar"></aside><div class="app-content"><header id="app-topbar" class="app-topbar"></header><main class="private-main"><div class="app-head"><div><div class="page-eyebrow" data-i18n="settings.eyebrow"></div><h1 data-i18n="settings.title"></h1><p data-i18n="settings.subtitle"></p></div></div><div id="config-feedback" hidden></div>
+<section class="card editor-card"><form id="company-form"><div class="form-grid-2"><div class="form-group"><label for="company-name" data-i18n="settings.company"></label><input id="company-name" class="form-control" required></div><div class="form-group"><label for="company-tax" data-i18n="settings.taxId"></label><input id="company-tax" class="form-control" required></div></div>
+<div class="form-grid-3"><div class="form-group"><label for="company-country" data-i18n="settings.country"></label><input id="company-country" class="form-control" value="España"></div><div class="form-group"><label for="company-currency" data-i18n="settings.currency"></label><select id="company-currency" class="form-control"></select></div><div class="form-group"><label for="company-profile" data-i18n="settings.taxProfile"></label><select id="company-profile" class="form-control"></select></div></div>
+<div class="form-grid-3"><div class="form-group"><label for="company-tax-region" data-i18n="settings.taxRegion"></label><input id="company-tax-region" class="form-control" placeholder="ES"></div><div class="form-group" id="company-state-wrap" hidden><label for="company-tax-state" data-i18n="settings.usState"></label><select id="company-tax-state" class="form-control"></select></div><div class="form-group"><label for="company-tax-rate" data-i18n="settings.taxRate"></label><input id="company-tax-rate" type="number" min="0" max="100" step="0.01" class="form-control"></div></div>
+<div class="form-grid-3"><div class="form-group"><label for="company-address" data-i18n="settings.address"></label><input id="company-address" class="form-control"></div><div class="form-group"><label for="company-postal" data-i18n="settings.postal"></label><input id="company-postal" class="form-control"></div><div class="form-group"><label for="company-city" data-i18n="settings.city"></label><input id="company-city" class="form-control"></div></div>
+<div class="form-grid-3"><div class="form-group"><label for="company-province" data-i18n="settings.province"></label><input id="company-province" class="form-control"></div><div class="form-group"><label for="company-irpf" data-i18n="settings.irpf"></label><select id="company-irpf" class="form-control"><option value="0" data-i18n="common.zero"></option><option value="15" data-i18n="common.fifteen"></option><option value="7" data-i18n="common.seven"></option></select></div><div class="form-group"><label for="company-logo" data-i18n="settings.logo"></label><input id="company-logo" class="form-control" placeholder="https://..."></div></div>
+<button class="btn-primary" type="submit" data-i18n="settings.save"></button></form></section>
+<section class="card editor-card backup-card">
+  <div class="section-title"><div><h2 data-i18n="backup.title"></h2><p class="subtle" data-i18n="backup.text"></p></div></div>
+  <div class="btn-row">
+    <button id="backup-export" class="btn-ghost" type="button" data-i18n="backup.export"></button>
+    <label class="btn-primary file-button" for="backup-import" data-i18n="backup.import"></label>
+    <input id="backup-import" type="file" accept="application/json,.json" hidden>
+  </div>
+  <small class="input-hint" data-i18n="backup.hint"></small>
+</section>
+</main></div></div><script type="module" src="js/main.js"></script><script type="module" src="js/configuracion.js"></script>
+</body></html>

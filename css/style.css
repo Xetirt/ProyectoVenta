@@ -1,0 +1,694 @@
+/* --- VARIABLES DE COLOR Y ESTILO ORIGINAL --- */
+
+:root {
+    --bg-dark: #0d1322;
+    --bg-card: #1e293b;
+    --primary-color: #10b981;
+    --primary-hover: #059669;
+    --accent-color: #34d399;
+    --text-light: #ffffff;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
+    --font-main: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+
+/* --- RESETEO BÁSICO DE CADA ELEMENTO --- */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* --- BARRA DE NAVEGACIÓN --- */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 8%;
+    background-color: #0b1120;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.navbar nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.navbar nav a {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: var(--primary-color);
+}
+
+
+/* --- BOTONES --- */
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #0d1322 !important;
+    padding: 0.75rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    border: 1px solid var(--border-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    color: var(--text-light) !important;
+    transition: background-color 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-card);
+}
+
+
+/* --- SECCIONES Y ESTRUCTURA --- */
+
+.hero-section {
+    padding: 4rem 8% 2rem;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-section h1 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    margin-bottom: 0.8rem;
+    color: var(--text-light);
+}
+
+.hero-section p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+
+/* --- TARJETAS --- */
+
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card h2,
+.card h3 {
+    color: var(--text-light);
+    margin-bottom: 0.8rem;
+}
+
+
+/* --- SOLUCIÓN A LOS INPUTS Y FORMULARIOS --- */
+
+form {
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1.2rem;
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    font-weight: 500;
+    width: 100%;
+}
+
+.input-field {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: block;
+    padding: 0.75rem 1rem;
+    background-color: #0b1120;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.input-field:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 6px rgba(16, 185, 129, 0.3);
+}
+
+
+/* --- PESTAÑAS Y CONTENIDOS --- */
+
+.tabs-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    padding: 0 8%;
+}
+
+.tab-btn {
+    background-color: var(--bg-card);
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+    background-color: var(--primary-color);
+    color: #0d1322;
+    border-color: var(--primary-color);
+}
+
+.modulo-content {
+    display: none;
+    padding: 0 8%;
+}
+
+.modulo-content.active {
+    display: block;
+}
+
+.grid-form {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 2rem;
+}
+
+@media (max-width: 900px) {
+    .grid-form {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* --- TABLAS --- */
+
+.table-container {
+    overflow-x: auto;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.data-table th,
+.data-table td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.data-table th {
+    background-color: #0b1120;
+    color: var(--accent-color);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.data-table td {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+
+/* --- BADGES Y ESTADOS --- */
+
+.badge {
+    padding: 0.25rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.badge-success {
+    background-color: rgba(16, 185, 129, 0.2);
+    color: #10b981;
+}
+
+.badge-warning {
+    background-color: rgba(245, 158, 11, 0.2);
+    color: #f59e0b;
+}
+
+.badge-danger {
+    background-color: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+}
+
+
+/* --- FOOTER --- */
+
+footer {
+    margin-top: auto;
+    padding: 2rem 8%;
+    background-color: #0b1120;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+}
+
+/* ==========================================================================
+   MÓDULO FACTURACIÓN - TEMA OSCURO (Ajustes de Integración)
+   ========================================================================== */
+
+.editor-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 992px) {
+  .editor-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Estilos de Entradas e Inputs para Modo Oscuro */
+.form-control, 
+select.form-control, 
+textarea.form-control,
+input[type="text"].form-control,
+input[type="date"].form-control,
+input[type="number"].form-control {
+  width: 100%;
+  background-color: #1e293b !important; /* Fondo oscuro acorde al tema */
+  color: #f8fafc !important; /* Texto claro legible */
+  border: 1px solid #334155 !important;
+  border-radius: 6px;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.875rem;
+  box-sizing: border-box;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #10b981 !important; /* Verde primario de tu interfaz */
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+}
+
+.form-control::placeholder {
+  color: #64748b;
+}
+
+/* Estructura del Formulario */
+.form-row {
+  margin-bottom: 1rem;
+}
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8rem; }
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-group label,
+.form-label {
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Checkboxes y textos inferiores */
+.form-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 1.2rem 0;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: #cbd5e1 !important; /* Fuerza color claro visible */
+  cursor: pointer;
+}
+
+.checkbox-container input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #10b981; /* Coincide con el color verde del botón */
+  cursor: pointer;
+}
+
+.checkbox-container a {
+  color: #34d399 !important;
+  text-decoration: underline;
+}
+
+/* Botones dentro del módulo */
+.btn-primary {
+  background-color: #10b981 !important;
+  color: #ffffff !important;
+  border: none;
+  padding: 0.65rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #059669 !important;
+}
+
+.btn-secondary {
+  background-color: #334155;
+  color: #f1f5f9;
+  border: 1px solid #475569;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px dashed #475569;
+  color: #94a3b8;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.btn-outline:hover {
+  border-color: #10b981;
+  color: #10b981;
+}
+
+/* Filas dinámicas de conceptos */
+.concept-item {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr 0.8fr 1fr 30px;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.btn-remove-row {
+  color: #ef4444;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Hoja de Previsualización (PDF en Papel Blanco) */
+.paper-page {
+  background: #ffffff !important; /* La Hoja SIEMPRE debe ser blanca */
+  color: #0f172a !important;     /* Texto del PDF oscuro siempre */
+  border-radius: 6px;
+  padding: 2rem;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Asegurar visibilidad del título dentro del PDF blanco */
+.paper-page h2.doc-title,
+#prevDocTitle {
+  color: #2563eb !important; /* Azul o el color de acento del documento */
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 800;
+  display: block !important;
+}
+
+.paper-page p, 
+.paper-page strong, 
+.paper-page span,
+.paper-page td,
+.paper-page th {
+  color: #1e293b !important; /* Fuerza color oscuro dentro del papel */
+}
+
+.paper-page .sub-text,
+.paper-page .doc-num,
+.paper-page .page-num {
+  color: #64748b !important;
+}
+
+.preview-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.preview-table th {
+  background-color: #f8fafc !important;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.preview-table td {
+  padding: 0.6rem 0.5rem;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.82rem;
+}
+
+.divider {
+  border: 0;
+  height: 2px;
+  background: #10b981;
+  margin: 1rem 0;
+}
+
+.paper-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* ==========================================================================
+   CORRECCIÓN DE MODALES (Asegura ocultación e interacción)
+   ========================================================================== */
+
+.modal-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(15, 23, 42, 0.75) !important;
+  backdrop-filter: blur(4px);
+  
+  /* OCULTO POR DEFECTO */
+  display: none !important; 
+  justify-content: center;
+  align-items: center;
+  z-index: 9999 !important;
+}
+
+/* Solo se muestra cuando JS añade la clase 'active' */
+.modal-overlay.active {
+  display: flex !important;
+}
+
+.modal-box {
+  background: #1e293b !important; /* Mismo color de tarjeta en modo oscuro */
+  color: #f8fafc !important;
+  border: 1px solid #334155 !important;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 480px;
+  padding: 1.5rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: #f8fafc;
+}
+
+.btn-close {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.btn-close:hover {
+  color: #ef4444;
+}
+
+/* Tamaño extendido para los modales con muchos campos */
+.modal-box.modal-lg {
+  max-width: 620px !important;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.sub-text-modal {
+  color: #94a3b8;
+  font-size: 0.8rem;
+  margin: 0.2rem 0 0 0;
+}
+
+/* Grupo de NIF / NIE + Número en la misma línea */
+.input-group-split {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 0.5rem;
+}
+
+/* Caja destacada para cargar cliente guardado */
+.saved-client-box {
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  padding: 0.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.lbl-highlight {
+  color: #38bdf8 !important;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.margin-v {
+  margin: 1rem 0;
+}
+
+/* Semantic theme compatibility for legacy components. */
+:root {
+    --bg-primary: #0d1322;
+    --bg-card: #1e293b;
+    --text-primary: #ffffff;
+    --text-secondary: #94a3b8;
+    --border-color: #334155;
+    --input-bg: #172033;
+}
+html[data-theme="light"] {
+    --bg-primary: #f4f6f9;
+    --bg-card: #ffffff;
+    --text-primary: #1a1a1a;
+    --text-secondary: #6c757d;
+    --border-color: #e0e0e0;
+    --input-bg: #f8f9fa;
+}
+html[data-theme="dark"] {
+    --bg-primary: #0d1322;
+    --bg-card: #1e293b;
+    --text-primary: #ffffff;
+    --text-secondary: #94a3b8;
+    --border-color: #334155;
+    --input-bg: #172033;
+}
+body { background: var(--bg-primary); color: var(--text-primary); }
+.card,
+.modal-box,
+.modal-dialog,
+.modal-body { background-color: var(--bg-card); color: var(--text-primary); border-color: var(--border-color); }
+.form-control,
+.form-select,
+.input-field,
+select.form-control,
+textarea.form-control,
+input.form-control { background-color: var(--input-bg) !important; color: var(--text-primary) !important; border-color: var(--border-color) !important; }
+.table-responsive { width:100%; overflow-x:auto; overflow-y:hidden; -webkit-overflow-scrolling:touch; }
+.table-responsive > table { width:100%; min-width:640px; }
+.modal-dialog,
+.modal-body { overflow-y:auto; max-height:80vh; }

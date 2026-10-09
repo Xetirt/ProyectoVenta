@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script src="js/theme-bootstrap.js"></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="GestioFlex: facturación, presupuestos, inventario y finanzas conectados para autónomos y empresas."
+  >
+
+  <title data-i18n-title="app.name"></title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body class="landing-main">
+
+  <header id="app-navbar"></header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="landing-hero">
+      <div class="container hero-layout">
+
+        <div class="hero-copy">
+
+          <span class="hero-badge" data-i18n="landing.badge"></span>
+
+          <h1 class="hero-title" data-i18n="landing.hero.title"></h1>
+
+          <p class="hero-subtitle" data-i18n="landing.hero.subtitle"></p>
+
+          <div class="hero-actions">
+            <a
+              href="registro.html"
+              class="btn-primary"
+              data-i18n="landing.cta.trial"
+            ></a>
+
+            <a
+              href="#demo"
+              class="btn-secondary"
+              data-i18n="landing.cta.demo"
+            ></a>
+          </div>
+
+          <div class="hero-trust">
+            <span data-i18n="landing.trust"></span>
+          </div>
+
+        </div>
+
+        <!-- MOCKUP / DEMO -->
+        <div
+          class="app-mockup"
+          id="demo"
+          aria-label="Vista previa de la aplicación"
+        >
+
+          <div class="mockup-bar" aria-hidden="true">
+            <span class="mockup-dot"></span>
+            <span class="mockup-dot"></span>
+            <span class="mockup-dot"></span>
+          </div>
+
+          <div class="mockup-grid">
+
+            <aside class="mock-sidebar" aria-hidden="true">
+              <span class="active"></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </aside>
+
+            <div class="mock-content">
+
+              <!-- KPIs -->
+              <div class="mock-kpis">
+
+                <article class="mock-kpi">
+                  <small data-i18n="landing.preview.kpi1"></small>
+                  <strong>12.480 €</strong>
+                </article>
+
+                <article class="mock-kpi">
+                  <small data-i18n="landing.preview.kpi2"></small>
+                  <strong>4.320 €</strong>
+                </article>
+
+                <article class="mock-kpi">
+                  <small data-i18n="landing.preview.kpi3"></small>
+                  <strong>3</strong>
+                </article>
+
+              </div>
+
+              <!-- ACTIVIDAD RECIENTE -->
+              <section class="mock-panel">
+
+                <div class="mock-panel-header">
+                  <h4>
+                    <span data-i18n="landing.preview.table"></span>
+                  </h4>
+                </div>
+
+                <div class="mock-activity">
+
+                  <div class="mock-row">
+                    <span>F26-0032 · Cliente Demo</span>
+                    <strong>580,80 €</strong>
+                  </div>
+
+                  <div class="mock-row">
+                    <span>F26-0031 · Licencias</span>
+                    <strong>191,18 €</strong>
+                  </div>
+
+                  <div class="mock-row">
+                    <span>P26-0068 · Soporte</span>
+                    <strong>145,20 €</strong>
+                  </div>
+
+                  <div class="mock-row">
+                    <span data-i18n="landing.pendingVat"></span>
+                    <strong>2.144,30 €</strong>
+                  </div>
+
+                </div>
+
+              </section>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PRUEBA SOCIAL / VALOR -->
+    <section class="landing-proof" aria-label="Ventajas de GestioFlex">
+      <div class="container proof-grid">
+        <article class="proof-item">
+          <span class="proof-mark" aria-hidden="true">✓</span>
+          <div><strong data-i18n="landing.realtime"></strong><span data-i18n="landing.realtimeText"></span></div>
+        </article>
+        <article class="proof-item">
+          <span class="proof-mark" aria-hidden="true">↗</span>
+          <div><strong data-i18n="landing.taxConfig"></strong><span data-i18n="landing.taxConfigText"></span></div>
+        </article>
+        <article class="proof-item">
+          <span class="proof-mark" aria-hidden="true">◎</span>
+          <div><strong data-i18n="landing.appDesign"></strong><span data-i18n="landing.appDesignText"></span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- TODO CONECTADO / FEATURES -->
+    <section
+      class="landing-section"
+      aria-labelledby="features-title"
+    >
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span
+            class="page-eyebrow"
+            data-i18n="landing.features.eyebrow"
+          ></span>
+
+          <h2
+            id="features-title"
+            data-i18n="landing.features.title"
+          ></h2>
+
+          <p data-i18n="landing.features.subtitle"></p>
+
+        </div>
+
+        <div class="features-grid">
+
+          <article class="card feature-card">
+            <div class="feature-icon">01</div>
+
+            <h3 data-i18n="feature.billing.title"></h3>
+
+            <p data-i18n="feature.billing.text"></p>
+          </article>
+
+          <article class="card feature-card">
+            <div class="feature-icon">02</div>
+
+            <h3 data-i18n="feature.stock.title"></h3>
+
+            <p data-i18n="feature.stock.text"></p>
+          </article>
+
+          <article class="card feature-card">
+            <div class="feature-icon">03</div>
+
+            <h3 data-i18n="feature.finance.title"></h3>
+
+            <p data-i18n="feature.finance.text"></p>
+          </article>
+
+          <article class="card feature-card">
+            <div class="feature-icon">04</div>
+
+            <h3 data-i18n="feature.multi.title"></h3>
+
+            <p data-i18n="feature.multi.text"></p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- PREVIEW / DOCUMENTO -->
+    <section class="landing-section preview-section">
+
+      <div class="container">
+
+        <div class="preview-showcase">
+
+          <div class="preview-copy">
+
+            <span
+              class="page-eyebrow"
+              data-i18n="landing.preview.eyebrow"
+            ></span>
+
+            <h2 data-i18n="landing.preview.title"></h2>
+
+            <div class="preview-points">
+
+              <div class="preview-point">
+                <div class="feature-icon">✓</div>
+
+                <div>
+                  <strong data-i18n="landing.realtime"></strong>
+                  <span data-i18n="landing.realtimeText"></span>
+                </div>
+              </div>
+
+              <div class="preview-point">
+                <div class="feature-icon">✓</div>
+
+                <div>
+                  <strong data-i18n="landing.taxConfig"></strong>
+                  <span data-i18n="landing.taxConfigText"></span>
+                </div>
+              </div>
+
+              <div class="preview-point">
+                <div class="feature-icon">✓</div>
+
+                <div>
+                  <strong data-i18n="landing.appDesign"></strong>
+                  <span data-i18n="landing.appDesignText"></span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="app-mockup preview-mockup">
+
+            <section class="mock-panel">
+
+              <div class="mock-panel-header">
+                <h4>
+                  <span data-i18n="landing.document"></span>
+                  <span aria-hidden="true"> · </span>
+                  <span>F26-0032</span>
+                </h4>
+              </div>
+
+              <div class="mock-document-body">
+
+                <div class="mock-row">
+                  <span data-i18n="landing.taxBase"></span>
+                  <strong>480,00 €</strong>
+                </div>
+
+                <div class="mock-row">
+                  <span data-i18n="landing.vat21"></span>
+                  <strong>+100,80 €</strong>
+                </div>
+
+                <div class="mock-row">
+                  <span data-i18n="landing.withholding"></span>
+                  <strong>−0,00 €</strong>
+                </div>
+
+                <div class="mock-row mock-row-total">
+                  <span data-i18n="landing.totalDue"></span>
+                  <strong>580,80 €</strong>
+                </div>
+
+              </div>
+
+            </section>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+<!-- PRICING -->
+<section
+  class="landing-section"
+  id="precios"
+  aria-labelledby="pricing-title"
+>
+  <div class="container">
+    <div class="section-heading">
+      <span
+        class="page-eyebrow"
+        data-i18n="pricing.eyebrow"
+      ></span>
+
+      <h2
+        id="pricing-title"
+        data-i18n="pricing.title"
+      ></h2>
+
+      <p data-i18n="pricing.subtitle"></p>
+    </div>
+
+    <div class="pricing-wrap">
+      <div
+        class="billing-toggle"
+        role="tablist"
+        aria-label="Periodo de facturación"
+      >
+        <button
+          class="btn-primary active"
+          type="button"
+          role="tab"
+          aria-selected="true"
+          data-period="monthly"
+          data-i18n="pricing.monthly"
+        ></button>
+
+        <button
+          class="btn-primary"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          data-period="annual"
+          data-i18n="pricing.annual"
+        ></button>
+      </div>
+
+      <div class="plan-grid">
+        <article class="card plan-card">
+          <h3 data-i18n="pricing.freelance"></h3>
+
+          <p
+            class="subtle"
+            data-i18n="pricing.freelanceDesc"
+          ></p>
+
+          <div
+            class="plan-price"
+            id="price-freelance"
+          >
+            12 €
+            <small data-i18n="pricing.perMonth"></small>
+          </div>
+
+          <ul class="plan-features">
+            <li data-i18n="pricing.f1"></li>
+            <li data-i18n="pricing.f2"></li>
+            <li data-i18n="pricing.f3"></li>
+            <li data-i18n="pricing.f4"></li>
+          </ul>
+
+          <a
+            class="btn-primary"
+            href="checkout.html?plan=freelance&period=monthly"
+            data-plan-link="freelance"
+            data-i18n="pricing.choose"
+          ></a>
+        </article>
+
+        <article class="card plan-card featured">
+          <h3 data-i18n="pricing.pyme"></h3>
+
+          <p
+            class="subtle"
+            data-i18n="pricing.pymeDesc"
+          ></p>
+
+          <div
+            class="plan-price"
+            id="price-pyme"
+          >
+            39 €
+            <small data-i18n="pricing.perMonth"></small>
+          </div>
+
+          <ul class="plan-features">
+            <li data-i18n="pricing.p1"></li>
+            <li data-i18n="pricing.p2"></li>
+            <li data-i18n="pricing.p3"></li>
+            <li data-i18n="pricing.p4"></li>
+            <li data-i18n="pricing.f4"></li>
+          </ul>
+
+          <a
+            class="btn-primary"
+            href="checkout.html?plan=pyme&period=monthly"
+            data-plan-link="pyme"
+            data-i18n="pricing.choose"
+          ></a>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- FAQ -->
+    <section
+      class="landing-section"
+      aria-labelledby="faq-title"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span
+            class="page-eyebrow"
+            data-i18n="landing.faq.eyebrow"
+          ></span>
+
+          <h2
+            id="faq-title"
+            data-i18n="landing.faq.title"
+          ></h2>
+
+        </div>
+
+        <div class="faq-list">
+
+          <article class="faq-item">
+
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
+            >
+              <span data-i18n="faq.tax.q"></span>
+              <span aria-hidden="true">+</span>
+            </button>
+
+            <div class="faq-answer">
+              <span data-i18n="faq.tax.a"></span>
+            </div>
+
+          </article>
+
+          <article class="faq-item">
+
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
+            >
+              <span data-i18n="faq.data.q"></span>
+              <span aria-hidden="true">+</span>
+            </button>
+
+            <div class="faq-answer">
+              <span data-i18n="faq.data.a"></span>
+            </div>
+
+          </article>
+
+          <article class="faq-item">
+
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
+            >
+              <span data-i18n="faq.trial.q"></span>
+              <span aria-hidden="true">+</span>
+            </button>
+
+            <div class="faq-answer">
+              <span data-i18n="faq.trial.a"></span>
+            </div>
+
+          </article>
+
+          <article class="faq-item">
+
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
+            >
+              <span data-i18n="faq.currency.q"></span>
+              <span aria-hidden="true">+</span>
+            </button>
+
+            <div class="faq-answer">
+              <span data-i18n="faq.currency.a"></span>
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CTA FINAL -->
+    <section class="commercial-cta">
+
+      <div class="container">
+
+        <div class="card cta-card">
+
+          <div class="page-eyebrow">
+            <span>14 días</span>
+          </div>
+
+          <h2 data-i18n="landing.cta.trial"></h2>
+
+          <p class="subtle">
+            Crea tu cuenta, carga datos demo y prueba el flujo completo
+            antes de conectar servicios externos.
+          </p>
+
+          <div class="hero-actions cta-centered">
+
+            <a
+              href="registro.html"
+              class="btn-primary"
+              data-i18n="landing.cta.trial"
+            ></a>
+
+            <a
+              href="login.html"
+              class="btn-secondary"
+              data-i18n="nav.login"
+            ></a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="landing-footer">
+    <div class="container">
+      <p data-i18n="landing.footer"></p>
+    </div>
+  </footer>
+
+
+  <script type="module" src="js/main.js"></script>
+
+</body>
+</html>

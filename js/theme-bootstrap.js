@@ -1,0 +1,1 @@
+(function(){try{var raw=localStorage.getItem('gp_theme'),theme='dark';if(raw){try{theme=JSON.parse(raw)}catch(e){theme=raw}}document.documentElement.dataset.theme=theme==='dark'?'dark':'light';document.documentElement.style.colorScheme=document.documentElement.dataset.theme;}catch(e){document.documentElement.dataset.theme='dark';}})();

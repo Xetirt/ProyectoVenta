@@ -1,0 +1,21 @@
+<!DOCTYPE html><html lang="es"><head>
+<script src="js/theme-bootstrap.js"></script><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/app.css"><title data-i18n-title="simulator.title"></title><script src="https://cdn.jsdelivr.net/npm/chart.js"></script></head>
+<body><div class="app-layout"><aside id="app-sidebar" class="sidebar"></aside><div class="app-content"><header id="app-topbar" class="app-topbar"></header><main class="private-main phase6-main">
+<div class="app-head"><div><div class="page-eyebrow" data-i18n="simulator.eyebrow"></div><h1 data-i18n="simulator.title"></h1><p data-i18n="simulator.subtitle"></p></div><div class="btn-row"><span id="sim-plan-badge" class="badge"></span></div></div>
+<section class="feature-grid feature-grid-sim">
+ <div class="card editor-card"><div class="section-title"><h2 data-i18n="simulator.controls"></h2></div>
+  <div class="range-row"><label for="sim-conversion" data-i18n="simulator.conversion"></label><output id="sim-conversion-value">35%</output><input id="sim-conversion" type="range" min="5" max="90" value="35" step="1"></div>
+  <div class="range-row"><label for="sim-growth" data-i18n="simulator.growth"></label><output id="sim-growth-value">5%</output><input id="sim-growth" type="range" min="-10" max="20" value="5" step="1"></div>
+  <div class="range-row"><label for="sim-cac" data-i18n="simulator.cac"></label><output id="sim-cac-value">120</output><input id="sim-cac" type="range" min="0" max="500" value="120" step="5"></div>
+  <div class="range-row"><label for="sim-potential" data-i18n="simulator.potential"></label><output id="sim-potential-value">12</output><input id="sim-potential" type="range" min="0" max="100" value="12" step="1"></div>
+  <div class="form-group"><label for="sim-horizon" data-i18n="simulator.horizon"></label><select id="sim-horizon" class="form-control"><option value="3" data-i18n="simulator.m3"></option><option value="6" data-i18n="simulator.m6"></option><option value="12" data-i18n="simulator.m12"></option></select></div>
+  <div class="btn-row"><button id="sim-project" class="btn-primary" type="button" data-i18n="simulator.project"></button><button id="sim-export-csv" class="btn-ghost" type="button" data-i18n="premium.reportCsv"></button><button id="sim-extreme" class="btn-ghost" type="button" data-premium-feature="simulatorAdvanced" data-i18n="simulator.extreme"></button></div>
+  <p class="input-hint" id="sim-note"></p>
+ </div>
+ <div class="card editor-card"><div class="section-title"><div><h2 data-i18n="simulator.realistic"></h2><p class="subtle" data-i18n="simulator.noHistory"></p></div></div>
+  <div class="kpi-grid feature-kpis"><div class="card"><div class="kpi-label" data-i18n="simulator.kpiRevenue"></div><div class="kpi-value" id="sim-kpi-revenue">0</div></div><div class="card"><div class="kpi-label" data-i18n="simulator.kpiCash"></div><div class="kpi-value" id="sim-kpi-cash">0</div></div><div class="card"><div class="kpi-label" data-i18n="simulator.kpiAcq"></div><div class="kpi-value" id="sim-kpi-acq">0</div></div><div class="card"><div class="kpi-label" data-i18n="simulator.kpiTax"></div><div class="kpi-value" id="sim-kpi-tax">0</div></div></div>
+  <div class="chart-panel chart-container simulador-chart-container"><div class="chart-wrapper"><canvas id="sim-chart" aria-label="Projection chart"></canvas></div></div>
+  <div class="scenario-grid"><div class="scenario-pill pessimistic"><strong data-i18n="simulator.pessimistic"></strong><span id="sim-s-pess">0</span></div><div class="scenario-pill realistic"><strong data-i18n="simulator.realistic"></strong><span id="sim-s-real">0</span></div><div class="scenario-pill optimistic"><strong data-i18n="simulator.optimistic"></strong><span id="sim-s-opt">0</span></div></div>
+ </div>
+</section></main></div></div><script type="module" src="js/main.js"></script><script type="module" src="js/simulador.js"></script></body></html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="es"><head>
+  <script src="js/theme-bootstrap.js"></script><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title data-i18n-title="dashboard.title"></title><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/app.css"></head>
+<body><div class="app-layout"><aside id="app-sidebar" class="sidebar"></aside><div class="app-content"><header id="app-topbar" class="app-topbar"></header><main class="private-main dashboard-main">
+  <div class="app-head dashboard-head">
+    <div><div class="page-eyebrow" data-i18n="dashboard.eyebrow"></div><h1 id="saludo" data-i18n="dashboard.title"></h1><p data-i18n="dashboard.subtitle"></p></div>
+    <div class="dashboard-actions"><span id="subscription-tier" class="badge badge-neutral"></span><a href="presupuestos.html" class="btn-primary" data-i18n="dashboard.new"></a><button id="export-report-pdf" class="btn-ghost btn-small" data-premium-feature="advancedReports" type="button" data-i18n="premium.reportPdf"></button><button id="export-report-csv" class="btn-ghost btn-small" data-premium-feature="advancedReports" type="button" data-i18n="premium.reportCsv"></button></div>
+  </div>
+
+  <section class="kpi-grid dashboard-kpis" id="dashboard-kpis">
+    <div class="card kpi-card kpi-income"><div class="kpi-icon">↗</div><div class="kpi-label" data-i18n="dashboard.income"></div><div class="kpi-value" id="kpi-ingresos">0,00 €</div><div class="kpi-meta" data-i18n="dashboard.incomeMeta"></div></div>
+    <div class="card kpi-card"><div class="kpi-icon">↘</div><div class="kpi-label" data-i18n="dashboard.expenses"></div><div class="kpi-value" id="kpi-gastos">0,00 €</div><div class="kpi-meta" data-i18n="dashboard.expensesMeta"></div></div>
+    <div class="card kpi-card kpi-result"><div class="kpi-icon">✓</div><div class="kpi-label" data-i18n="dashboard.result"></div><div class="kpi-value" id="kpi-resultado">0,00 €</div><div class="kpi-meta" data-i18n="dashboard.resultMeta"></div></div>
+    <div class="card kpi-card"><div class="kpi-icon">◷</div><div class="kpi-label" data-i18n="dashboard.receivable"></div><div class="kpi-value" id="kpi-pendientes">0,00 €</div><div class="kpi-meta" id="kpi-pendientes-count"></div></div>
+    <div class="card kpi-card"><div class="kpi-icon">▦</div><div class="kpi-label" data-i18n="dashboard.stockAlert"></div><div class="kpi-value" id="kpi-stock">0</div><div class="kpi-meta" data-i18n="dashboard.stockMeta"></div></div>
+  </section>
+
+  <section class="dash-grid dashboard-upper-grid">
+    <div class="card dashboard-panel"><div class="section-title"><div><h2 data-i18n="dashboard.recent"></h2><p class="subtle" data-i18n="dashboard.chartHint"></p></div><a href="presupuestos.html" class="subtle" data-i18n="dashboard.viewAll"></a></div><div class="table-container"><table class="data-table responsive-cards"><thead><tr><th data-i18n="table.number"></th><th data-i18n="table.party"></th><th data-i18n="table.type"></th><th data-i18n="table.status"></th><th data-i18n="table.total"></th></tr></thead><tbody id="tabla-ultimas"></tbody></table></div></div>
+    <div class="card dashboard-panel"><div class="section-title"><div><h2 data-i18n="dashboard.restock"></h2><p class="subtle" data-i18n="dashboard.stockMeta"></p></div><a href="funcionalidades.html" class="subtle" data-i18n="dashboard.inventory"></a></div><ul class="summary-list" id="lista-bajo-stock"></ul></div>
+  </section>
+
+  <section class="dashboard-advanced-grid">
+    <div class="card dashboard-panel premium-panel" data-premium-feature="advancedAnalytics" id="advanced-analytics-panel"><div class="section-title"><div><span class="premium-label" data-i18n="premium.badge"></span><h2 data-i18n="dashboard.chartTitle"></h2><p class="subtle" data-i18n="dashboard.chartHint"></p></div></div><label class="chart-period-control" for="income-expense-period">Periodo <select id="income-expense-period" class="form-control"><option value="days">Días · 30 días</option><option value="months" selected>Meses · 12 meses</option><option value="years">Años · 5 años</option></select></label><div class="chart-wrap"><canvas id="income-expense-chart"></canvas></div><div id="advanced-finance-meta" class="dashboard-insight-row"></div></div>
+    <div class="card dashboard-panel premium-panel" data-premium-feature="fiscalCalendar" id="fiscal-calendar-panel"><div class="section-title"><div><span class="premium-label" data-i18n="premium.badge"></span><h2 data-i18n="calendar.title"></h2></div></div><ul class="summary-list fiscal-calendar" id="fiscal-calendar"></ul></div>
+    <div class="card dashboard-panel premium-lock-card" id="dashboard-premium-lock" hidden></div>
+  </section>
+</main></main></div></div><script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js"></script><script type="module" src="js/main.js"></script><script type="module" src="js/dashboard.js"></script>
+</body></html>

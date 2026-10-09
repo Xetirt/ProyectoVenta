@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script src="js/theme-bootstrap.js"></script>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n-title="portal.title"></title>
+  <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <header id="app-navbar"></header>
+  <main class="portal-main">
+    <section class="card portal-card">
+      <div id="portal-status" class="badge badge-neutral"></div>
+      <div class="page-eyebrow" data-i18n="portal.title"></div>
+      <h1 id="portal-number">—</h1>
+      <p id="portal-company" class="subtle"></p>
+      <div class="portal-parties"><div><span data-i18n="billing.from"></span><strong id="portal-from"></strong></div><div><span data-i18n="billing.to"></span><strong id="portal-to"></strong></div></div>
+      <div class="table-container"><table class="preview-table"><thead><tr><th data-i18n="billing.concept"></th><th data-i18n="billing.units"></th><th data-i18n="billing.price"></th><th data-i18n="portal.total"></th></tr></thead><tbody id="portal-lines"></tbody></table></div>
+      <div class="totals-box"><div class="totals-row"><span data-i18n="portal.subtotal"></span><strong id="portal-base"></strong></div><div class="totals-row"><span data-i18n="portal.tax"></span><strong id="portal-tax"></strong></div><div class="totals-row total"><span data-i18n="portal.total"></span><strong id="portal-total"></strong></div></div>
+      <div class="portal-actions">
+        <button type="button" class="btn-primary" id="portal-accept" data-i18n="portal.accept"></button>
+        <button type="button" class="btn-danger" id="portal-reject" data-i18n="portal.reject"></button>
+      </div>
+      <div id="signature-section" class="signature-panel">
+        <div class="section-title"><div><h2 data-i18n="portal.signature"></h2><p class="subtle" data-i18n="portal.demo"></p></div><button type="button" class="btn-ghost btn-small" id="signature-clear" data-i18n="portal.clear"></button></div>
+        <canvas id="signature-canvas" width="760" height="180" aria-label="Digital signature"></canvas>
+        <button type="button" class="btn-primary" id="signature-confirm" data-i18n="portal.confirm"></button>
+      </div>
+    </section>
+  </main>
+  <script type="module">
+    import './js/main.js';
+    import './js/portal.js';
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script src="js/theme-bootstrap.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n-title="auth.recover.title"></title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <header id="app-navbar"></header>
+    <main style="padding: 4rem 8%; display: flex; justify-content: center; flex-grow: 1;">
+        <div class="card" style="width: 100%; max-width: 420px; height: fit-content;">
+            <h2 style="text-align:center; font-size:1.6rem; margin-bottom:.4rem;" data-i18n="auth.recover.title"></h2>
+            <div id="mensaje-feedback" hidden></div>
+            <form id="form-recuperar">
+                <p style="color: var(--text-muted); font-size:.9rem; margin-bottom:1rem;"><span data-i18n="auth.recover.text"></span></p>
+                <div class="form-group"><label for="rec-email" data-i18n="auth.email"></label>
+                    <input type="email" id="rec-email" required class="input-field" placeholder="tu@empresa.com"></div>
+                <button type="submit" class="btn-primary" style="width:100%; margin-top:1rem;" data-i18n="auth.sendLink"></button>
+            </form>
+            <form id="form-reset" hidden>
+                <div class="form-group"><label for="nueva-password" data-i18n="auth.newPassword"></label>
+                    <input type="password" id="nueva-password" required minlength="8" class="input-field"></div>
+                <button type="submit" class="btn-primary" style="width:100%; margin-top:1rem;" data-i18n="auth.savePassword"></button>
+            </form>
+        </div>
+    </main>
+    <footer><p data-i18n="landing.footer"></p></footer>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script src="js/theme-bootstrap.js"></script>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n-title="checkout.title"></title>
+  <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/app.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body class="checkout-page">
+  <main class="checkout-shell">
+    <header class="checkout-header">
+      <button type="button" class="btn-back" id="checkout-back"><i class="fas fa-arrow-left" aria-hidden="true"></i><span data-i18n="checkout.back">Volver</span></button>
+      <h2 data-i18n="checkout.title">Proceso de Pago Seguro</h2>
+    </header>
+    <div class="checkout-layout">
+    <section class="card checkout-card">
+      <div class="page-eyebrow" data-i18n="checkout.eyebrow"></div><h1 data-i18n="checkout.title"></h1><p class="subtle" data-i18n="checkout.subtitle"></p>
+      <div class="section-title" style="margin-top:1.2rem"><h2 data-i18n="checkout.order"></h2></div>
+      <div class="form-grid-2">
+        <div class="form-group"><label for="checkout-plan" data-i18n="checkout.plan"></label><select id="checkout-plan" class="form-control"><option value="freelance" data-i18n="pricing.freelance"></option><option value="pyme" data-i18n="pricing.pyme"></option></select></div>
+        <div class="form-group"><label for="checkout-period" data-i18n="checkout.period"></label><select id="checkout-period" class="form-control"><option value="monthly" data-i18n="checkout.monthly"></option><option value="annual" data-i18n="checkout.annual"></option></select></div>
+      </div>
+      <div class="form-grid-2">
+        <div class="form-group"><label for="billing-country" data-i18n="checkout.country"></label><select id="billing-country" class="form-control"></select></div>
+        <div class="form-group"><label for="billing-tax-rate" data-i18n="checkout.taxRate"></label><input id="billing-tax-rate" class="form-control" type="number" min="0" max="100" step="0.01" value="21"></div>
+      </div>
+      <div class="form-group" id="billing-state-wrap" hidden><label for="billing-state" data-i18n="checkout.usState"></label><select id="billing-state" class="form-control"></select><div class="input-hint" data-i18n="checkout.usTaxHint"></div></div>
+      <div class="form-group"><label for="billing-tax-id" data-i18n="auth.taxId"></label><input id="billing-tax-id" class="form-control" autocomplete="off"></div>
+      <div class="section-title" style="margin-top:1rem"><h2 data-i18n="checkout.payment"></h2></div>
+      <div class="payment-methods">
+        <div class="payment-option"><input type="radio" name="payment-method" id="pm-card" value="card" checked><label for="pm-card" data-i18n="checkout.card"></label></div>
+        <div class="payment-option"><input type="radio" name="payment-method" id="pm-paypal" value="paypal"><label for="pm-paypal" data-i18n="checkout.paypal"></label></div>
+        <div class="payment-option"><input type="radio" name="payment-method" id="pm-transfer" value="transfer"><label for="pm-transfer" data-i18n="checkout.transfer"></label></div>
+      </div>
+      <div id="payment-details" class="payment-details">
+        <div class="card-brand"><span data-i18n="checkout.payBrand"></span><strong data-i18n="checkout.visa"></strong></div>
+        <div class="form-group"><label for="card-holder" data-i18n="checkout.holder"></label><input id="card-holder" class="form-control" autocomplete="cc-name"></div>
+        <div class="form-group"><label for="card-number" data-i18n="checkout.cardNumber"></label><input id="card-number" class="form-control" inputmode="numeric" autocomplete="cc-number" data-i18n-placeholder="checkout.cardNumberPlaceholder" maxlength="23"></div>
+        <div class="field-row"><div class="form-group"><label for="card-expiry" data-i18n="checkout.expiry"></label><input id="card-expiry" class="form-control" inputmode="numeric" autocomplete="cc-exp" data-i18n-placeholder="checkout.expiryPlaceholder" maxlength="5"></div><div class="form-group"><label for="card-cvc" data-i18n="checkout.cvc"></label><input id="card-cvc" class="form-control" inputmode="numeric" autocomplete="cc-csc" data-i18n-placeholder="checkout.cvcPlaceholder" maxlength="4"></div></div>
+      </div>
+      <div id="transfer-details" class="alert" hidden data-i18n="checkout.demoIban"></div>
+      <div class="section-title" style="margin-top:1rem"><h2 data-i18n="checkout.billing"></h2></div>
+      <div class="form-group"><label for="billing-name" data-i18n="auth.company"></label><input id="billing-name" class="form-control" autocomplete="organization"></div>
+      <div class="form-group"><label for="billing-email" data-i18n="auth.email"></label><input id="billing-email" type="email" class="form-control" autocomplete="email"></div>
+      <button id="pay-button" type="button" class="btn-primary" style="width:100%;margin-top:.6rem" data-i18n="checkout.pay"></button>
+      <p class="checkout-side-note" data-i18n="checkout.notice"></p><p class="checkout-legal-note" data-i18n="checkout.legalNotice"></p>
+    </section>
+
+    <aside class="card checkout-card">
+      <div class="page-eyebrow"><span data-i18n="app.name"></span></div><h2 data-i18n="checkout.order"></h2>
+      <div class="order-lines checkout-breakdown"><div class="order-line"><span data-i18n="checkout.plan"></span><strong id="summary-plan"></strong></div><div class="order-line"><span data-i18n="checkout.period"></span><strong id="summary-period"></strong></div><div class="order-line"><span data-i18n="checkout.base"></span><strong id="summary-base"><span id="checkout-subtotal"></span></strong></div><div class="order-line"><span id="summary-tax-label"><span id="checkout-tax-label" data-i18n="checkout.tax"></span></span><strong id="summary-tax"><span id="checkout-tax-amount"></span></strong></div><div class="order-line order-total"><span data-i18n="checkout.total"></span><strong id="summary-total"><span id="checkout-total"></span></strong></div></div>
+      <div class="card checkout-trial-card"><strong data-i18n="checkout.trialNote"></strong><p class="subtle" style="margin-top:.35rem" data-i18n="checkout.trialText"></p></div>
+      <div id="checkout-feedback" class="alert" hidden style="margin-top:1rem"></div>
+    </aside>
+    </div>
+  </main>
+
+  <script type="module" src="js/main.js"></script><script type="module" src="js/checkout.js"></script>
+</body></html>
